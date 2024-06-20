@@ -50,8 +50,12 @@
 #define DCOS(x) (cos((x) * .0174532925199))
 #define DSIN(x) (sin((x) * .0174532925199))
 #define DTAN(x) (tan((x) * .0174532925199))
+#ifndef MAX
 #define MAX(a,b) ((a) > (b) ? (a) : (b))
+#endif
+#ifndef MIN
 #define MIN(a,b) ((a) < (b) ? (a) : (b))
+#endif
 #define Fuz 0.1
 #define Planet(x)	(which && (1 << (x)))
 #define BrightestMag -1
