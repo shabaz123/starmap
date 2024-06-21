@@ -6,12 +6,12 @@ project(starmap C CXX ASM)
 set(CMAKE_C_STANDARD 11)
 set(CMAKE_CXX_STANDARD 17)
 
-# Creates a pico-sdk subdirectory in our project for the libraries
+add_definitions(-DLINUX_BUILD=1)
 
 # Tell CMake where to find the executable source file
 add_executable(${PROJECT_NAME}
-    Starmap.cpp
-    arrays.cpp
+    ../../src/Starmap.cpp
+    ../../src/arrays.cpp
     main.cpp
 )
 
