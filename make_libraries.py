@@ -55,6 +55,10 @@ os.system('cp -r src/* ../' + name + '/src')
 print('copying examples folder contents..')
 os.system('cp -r examples/* ../' + name + '/examples')
 
+print('removing StarmapMain folder since it is not required for Arduino..')
+if os.path.exists('../' + name + '/examples/StarmapMain'):
+  os.system('rm -rf ../' + name + '/examples/StarmapMain')
+
 print('removing any main.cpp and CMakeLists.txt file..')
 if os.path.exists('../' + name + '/src/main.cpp'):
   os.system('rm ../' + name + '/src/main.cpp')

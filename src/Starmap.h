@@ -4,7 +4,11 @@
 #ifndef STARMAP_H
 #define STARMAP_H
 
+#ifdef LINUX_BUILD
+#include "../examples/StarmapMain/Arduino.h"
+#else
 #include "Arduino.h"
+#endif
 #include <math.h>
 #include "arrays.h"
 
