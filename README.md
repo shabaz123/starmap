@@ -34,7 +34,7 @@ By doing that, a **starmap** Linux executable will be built in the build folder.
 It will generate a starmap PNG file (called out.png) which can be inspected.
 
 
-## Acknowlegdement
+## Acknowledgement
 
 Note: This code uses content from https://www.fourmilab.ch/homeplanet/ (public domain code).
 
