@@ -4,8 +4,8 @@
 
 // ******** includes ********
 #include <Starmap.h>
-#include <LGFX_TFT_eSPI.hpp>
 #include "S3_Parallel16_ili9488.h"
+#include <LGFX_TFT_eSPI.hpp>
 
 // ******** defines ********
 // defines
