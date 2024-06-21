@@ -36,8 +36,24 @@ if os.path.exists('../' + name):
   os.system('rm -rf ../' + name)
 os.makedirs('../' + name)
 
-print('copying files into the folder..')
-os.system('cp -r * ../' + name)
+print(f'creating folder ../{name}/src')
+if os.path.exists('../' + name + '/src'):
+  os.system('rm -rf ../' + name + '/src')
+os.makedirs('../' + name + '/src')
+
+print(f'creating folder ../{name}/examples')
+if os.path.exists('../' + name + '/examples'):
+  os.system('rm -rf ../' + name + '/examples')
+os.makedirs('../' + name + '/examples')
+
+print('copying library.properties..')
+os.system('cp -r library.properties ../' + name)
+
+print('copying src folder contents..')
+os.system('cp -r src/* ../' + name + '/src')
+
+print('copying examples folder contents..')
+os.system('cp -r examples/* ../' + name + '/examples')
 
 print('removing any main.cpp and CMakeLists.txt file..')
 if os.path.exists('../' + name + '/src/main.cpp'):
@@ -58,10 +74,6 @@ if os.path.exists('../' + name + '/src/Arduino.cpp'):
 print('removing any build folder..')
 if os.path.exists('../' + name + '/src/build'):
   os.system('rm -rf ../' + name + '/src/build')
-
-print('removing python script..')
-script_name = os.path.basename(__file__)
-os.system('rm ../' + name + '/' + script_name)
 
 print('removing any existing zip file of the target name..')
 if os.path.exists('../' + name + '.zip'):
