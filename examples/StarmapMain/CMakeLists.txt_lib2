@@ -1,0 +1,16 @@
+# build a normal library
+#
+add_library(starmap_lib Starmap.cpp arrays.cpp)
+
+set_source_files_properties(arrays.cpp PROPERTIES COMPILE_FLAGS -Wno-narrowing)
+
+target_link_libraries(starmap_lib PRIVATE
+        pico_stdlib
+        )
+
+# add the `binary` directory so that the generated headers are included in the project
+#
+target_include_directories (starmap_lib PUBLIC
+	${CMAKE_CURRENT_SOURCE_DIR}
+	${CMAKE_CURRENT_BINARY_DIR}
+	)
