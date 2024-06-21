@@ -7,9 +7,6 @@
 #include <SPI.h>
 #include <Wire.h>
 
-#include <HardwareSerial.h>
-
-
 // ******** defines ********
 // defines
 #define FOREVER 1
