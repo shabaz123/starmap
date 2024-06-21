@@ -3,7 +3,7 @@
 //
 
 #include <stdio.h>
-#include "Starmap.h"
+#include "../../src/Starmap.h"
 #include <png.h>
 
 #include <stdlib.h>
