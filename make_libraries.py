@@ -90,6 +90,8 @@ os.makedirs('../' + name_lib2)
 
 print('copying files into the folder..')
 os.system('cp -r src/* ../' + name_lib2)
+if os.path.exists('examples/StarmapMain/CMakeLists.txt_lib2'):
+  os.system('cp examples/StarmapMain/CMakeLists.txt_lib2 ../' + name_lib2)
 
 print('removing any main.cpp and CMakeLists.txt file..')
 if os.path.exists('../' + name_lib2 + '/main.cpp'):
