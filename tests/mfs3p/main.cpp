@@ -4,20 +4,24 @@
 
 // ******** includes ********
 #include <Starmap.h>
-#include <SPI.h>
-#include <Wire.h>
+#include "S3_Parallel16_ili9488.h"
+#include <LGFX_TFT_eSPI.hpp>
 
 // ******** defines ********
 // defines
 #define FOREVER 1
 #define DELAY_MS delay
 // screen dimensions
-#define TFT_W 240
-#define TFT_H 240
+#define TFT_W 320
+#define TFT_H 480
 // default co-ordinates, lat: deg N, lon: deg W
 #define DEFAULT_LAT 47.0
 #define DEFAULT_LON 122.0
 
+#define LCD_CS 37
+#define LCD_BLK 45
+
+LGFX tft;
 
 // ***** class based on Starmap ******
 class SM : public Starmap {
@@ -35,11 +39,10 @@ double mag;
 rect_s screen_rect;
 tm_t tm;
 
-
 // ******* plot_pixel function ******
 void SM::plot_pixel(uint16_t color, int x, int y) {
   if ((x>=TFT_W) || (x<0) || (y>=TFT_H) || (y<0)) return;
-  // handle your TFT here
+  tft.drawPixel(x,y,color);
 }
 
 // ******** setup() function ********
@@ -54,6 +57,18 @@ void setup() {
   screen_rect.bottom = TFT_H;
   starmap.siteLat = DEFAULT_LAT;
   starmap.siteLon = DEFAULT_LON;
+
+  pinMode(LCD_CS, OUTPUT);
+  pinMode(LCD_BLK, OUTPUT);
+
+  digitalWrite(LCD_CS, LOW);
+  digitalWrite(LCD_BLK, HIGH);
+
+  tft.init();
+  // tft.setRotation(1);
+  tft.startWrite();
+  tft.setTextSize(2);
+  tft.drawString("Setup cuccess", 5, 2);
 }
 
 // ******** loop() function ********
@@ -69,7 +84,6 @@ void loop() {
 
   starmap.paintSky(mag, &screen_rect); // paint the sky!
   Serial.print("done painting sky\n");
-  
   
   while(FOREVER) {
     DELAY_MS(1000);
