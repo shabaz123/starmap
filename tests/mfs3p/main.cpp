@@ -68,7 +68,7 @@ void setup() {
   // tft.setRotation(1);
   tft.startWrite();
   tft.setTextSize(2);
-  tft.drawString("Setup cuccess", 5, 2);
+  tft.drawString("Starmap ready!", 5, 2);
 }
 
 // ******** loop() function ********
