@@ -55,9 +55,9 @@ os.system('cp -r src/* ../' + name + '/src')
 print('copying examples folder contents..')
 os.system('cp -r examples/* ../' + name + '/examples')
 
-print('removing StarmapMain folder since it is not required for Arduino..')
-if os.path.exists('../' + name + '/examples/StarmapMain'):
-  os.system('rm -rf ../' + name + '/examples/StarmapMain')
+print('removing StarmapLinuxTest folder since it is not required for Arduino..')
+if os.path.exists('../' + name + '/examples/StarmapLinuxTest'):
+  os.system('rm -rf ../' + name + '/examples/StarmapLinuxTest')
 
 print('removing any main.cpp and CMakeLists.txt file..')
 if os.path.exists('../' + name + '/src/main.cpp'):
@@ -94,8 +94,8 @@ os.makedirs('../' + name_lib2)
 
 print('copying files into the folder..')
 os.system('cp -r src/* ../' + name_lib2)
-if os.path.exists('examples/StarmapMain/CMakeLists.txt_lib2'):
-  os.system('cp examples/StarmapMain/CMakeLists.txt_lib2 ../' + name_lib2)
+if os.path.exists('examples/StarmapLinuxTest/CMakeLists.txt_lib2'):
+  os.system('cp examples/StarmapLinuxTest/CMakeLists.txt_lib2 ../' + name_lib2)
 
 print('removing any main.cpp and CMakeLists.txt file..')
 if os.path.exists('../' + name_lib2 + '/main.cpp'):
