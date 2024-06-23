@@ -5,7 +5,7 @@
 #define STARMAP_H
 
 #ifdef LINUX_BUILD
-#include "../examples/StarmapMain/Arduino.h"
+#include "../examples/StarmapLinuxTest/Arduino.h"
 #else
 #include "Arduino.h"
 #endif
