@@ -1,3 +1,5 @@
+[![PlatformIO](https://github.com/shabaz123/starmap/workflows/PlatformIO/badge.svg)](https://github.com/shabaz123/starmap/actions/) ![ViewCount](https://views.whatilearened.today/views/github/shabaz123/starmap.svg)
+
 # starmap
 
 The code in this repository is a star/planets engine in an Arduino library.
