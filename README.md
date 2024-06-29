@@ -20,7 +20,7 @@ The other zip file that will be generated, called **starmap_lib.zip** is useful 
 If you wish to test the code on Linux, prior to uploading to any microcontroller, then you can do that by typing:
 
 ```
-cd starmap/examples/StarmapMain
+cd starmap/examples/StarmapLinuxTest
 mkdir -p build
 cd build
 cmake ..
