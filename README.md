@@ -27,7 +27,7 @@ cmake ..
 make
 ```
 
-By doing that, a **starmap** Linux executable will be built in the build folder. You can run it by typing:
+By doing that, a **starmap** Linux executable will be built in the build folder. Note that you may need to install **libpng** on your Linux machine beforehand (on Ubuntu, you can type **sudo apt install libpng**). You can run the starmap executable by typing:
 
 ```
 ./starmap
