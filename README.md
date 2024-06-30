@@ -33,7 +33,7 @@ By doing that, a **starmap** Linux executable will be built in the build folder.
 ./starmap
 ```
 
-It will generate a starmap PNG file (called out.png) which can be inspected.
+It will generate a star chart PNG file (called out.png) which can be inspected.
 
 
 ## Acknowledgement
