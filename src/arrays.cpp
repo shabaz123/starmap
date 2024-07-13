@@ -105,7 +105,7 @@ const char font5_7[96][5] = {
 };
 
 
-#ifndef ARDUINO_ARCH_ESP32
+#ifdef ORIG_PT_ARRAY
 struct periodicTerms pt[43] = {
 /*1*/ {0, 0, 1, -19798886, 19848454, -5453098, -14974876, 66867334, 68955876},
 /*2*/ {0, 0, 2, 897499, -4955707, 3527363, 1672673, -11826086, -333765},
@@ -151,8 +151,8 @@ struct periodicTerms pt[43] = {
 /*42*/ {3, 0, -1, 6, -3, 0, 0, 18, 35},
 /*43*/ {3, 0, 0, -1, -2, 0, 1, 13, 3}
 };
+#endif
 
-#else
 // pluto specific
 struct periodicTerms pt[43] = {
 
@@ -200,7 +200,7 @@ struct periodicTerms pt[43] = {
 /*42*/ {3, 0, (char)-1, 6, -3, 0, 0, 18, 35},
 /*43*/ {3, 0, 0, -1, -2, 0, 1, 13, 3}
 };
-#endif
+
 
 // icons
 // moon
